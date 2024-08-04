@@ -55,9 +55,8 @@ const Explore = () => {
         <h3 className="capitalize text-lg lg:text-xl font-semibold my-2">
           Popular {params.explore}
         </h3>
-        <div className="grid grid-cols-[repeat(auto-fit,230px)] gap-6">
+        <div className="grid justify-center items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {data.map((exploreData, index) => {
-            // console.log(exploreData);
             return (
               <Card
                 data={{ data: exploreData }}

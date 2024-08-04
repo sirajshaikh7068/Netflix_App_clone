@@ -60,17 +60,17 @@ const BannerHome = () => {
 
             <div className="absolute top-0 w-full h-full bg-gradient-to-t from-neutral-900 to-transparent"></div>
 
-            <div className="absolute top-0 h-full w-full hidden items-center justify-between px-4 text-3xl group-hover:flex">
+            <div className="absolute top-0 h-full w-full hidden lg:flex items-center justify-between px-4 text-3xl group-hover:flex">
               <button
                 onClick={handlePrevious}
-                className="rounded-full bg-white hover:scale-110 p-2"
+                className="rounded-full bg-white text-black hover:scale-110 p-2"
               >
                 <FaAngleLeft />
               </button>
 
               <button
                 onClick={handleNext}
-                className="rounded-full bg-white hover:scale-110 p-2"
+                className="rounded-full bg-white text-black hover:scale-110 p-2"
               >
                 <FaAngleRight />
               </button>
