@@ -3,15 +3,28 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Card = ({ data, trending, index }) => {
+const Card = ({ data, trending, index, media_type }) => {
   const imageURL = useSelector((state) => state.movieData.imageURL);
-  console.log(data);
+
+  const mediaType = data.data.media_type ?? media_type;
+
+  if (!data || !data.data) {
+    return null; // Or some fallback UI
+  }
+
   return (
     <Link
-      to={"/" + data.data.media_type + "/" + data.data.id}
-      className="w-full min-w-[230px] max-w-[230px] rounded h-80 overflow-hidden relative z-10 "
+      to={"/" + mediaType + "/" + data.data.id}
+      className="w-full min-w-[230px] max-w-[230px] rounded h-80 overflow-hidden block hover:scale-110 transition-all relative z-10 "
     >
-      <img src={imageURL + data?.data?.poster_path} alt="Poster " />
+      {data?.data?.poster_path ? (
+        <img src={imageURL + data?.data?.poster_path} alt="Poster " />
+      ) : (
+        <div className="bg-slate-900 flex justify-center items-center h-full w-full">
+          No Image Found
+        </div>
+      )}
+
       <div className="absolute top-4 text-white">
         {trending && (
           <div className="py-1 px-4 bg-black/60 backdrop-blur-3xl rounded-r-full overflow-hidden">

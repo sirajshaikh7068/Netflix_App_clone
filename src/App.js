@@ -17,7 +17,7 @@ function App() {
 
       dispatch(setBannerData(respose.data.results));
     } catch (error) {
-      console.log("error", error);
+      // console.log("error", error);
     }
   };
 
@@ -37,7 +37,7 @@ function App() {
   return (
     <main className="pb-16 lg:pb-0">
       <Header />
-      <div className="">
+      <div className="min-h-[92vh]">
         <Outlet />
       </div>
 
